@@ -16,7 +16,30 @@ amoFn = (method as text, domen as text, login as text, hash as text, limits as n
                         Binary.Buffer(
                             Web.Contents("https://raw.githubusercontent.com/masaniy/PQAmoCrm/master/get"&function&".m")
                         )
-                    ), #shared)
+                    ), [
+                        #"Web.Contents" = Web.Contents,
+                        #"Json.Document" = Json.Document,
+                        #"Text.Combine" = Text.Combine,
+                        #"Splitter.SplitByNothing" = Splitter.SplitByNothing,
+                        #"JoinKind.LeftOuter" = JoinKind.LeftOuter,
+                        #"ExtraValues.Error" = ExtraValues.Error,                        
+                        #"Record.Combine" = Record.Combine,
+                        #"Record.ToTable" = Record.ToTable,
+                        #"Table.ExpandRecordColumn" = Table.ExpandRecordColumn,
+                        #"Table.TransformColumnTypes" = Table.TransformColumnTypes,
+                        #"Table.First" = Table.First,
+                        #"Table.FromList" = Table.FromList,
+                        #"Table.SelectColumns" = Table.SelectColumns,
+                        #"Table.ExpandListColumn" = Table.ExpandListColumn,
+                        #"Table.AddColumn" = Table.AddColumn,
+                        #"Table.RemoveColumns" = Table.RemoveColumns,                        
+                        #"Table.FromRecords" = Table.FromRecords,
+                        #"Table.SelectRows" = Table.SelectRows,
+                        #"Table.Pivot" = Table.Pivot,
+                        #"Table.NestedJoin" = Table.NestedJoin,                       
+                        #"Table.ExpandTableColumn" = Table.ExpandTableColumn                    
+                    ]
+                    )
             in
                 sourceFn,
 
