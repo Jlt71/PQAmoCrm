@@ -53,7 +53,7 @@ in
 
         newAuthQuery = Record.Combine({
             authQuery,
-            [limit_rows ="500"],
+            [limit_rows ="35000"],
             [limit_offset=limits]}),
 
         getQuery  = Json.Document(Web.Contents(url,
