@@ -21,7 +21,7 @@ amoFn = (method as text, domen as text, login as text, hash as text, limits as n
             in
                 sourceFn,
 
-        generateList = List.Generate(()=>0, each _ < limit, each _ + 35000),
+        generateList = List.Generate(()=>0, each _ < limit, each _ + 500),
         listToTable = Table.FromList(generateList, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
         numberToText = Table.TransformColumnTypes(listToTable,{{"Column1", type text}}),
 
